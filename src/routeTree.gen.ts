@@ -9,38 +9,326 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as PricingRouteImport } from './routes/pricing'
+import { Route as AuthRouteImport } from './routes/auth'
+import { Route as AppRouteImport } from './routes/_app'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ApiChatRouteImport } from './routes/api/chat'
+import { Route as AppWritingCoachRouteImport } from './routes/_app/writing-coach'
+import { Route as AppTimelineRouteImport } from './routes/_app/timeline'
+import { Route as AppSummarizerRouteImport } from './routes/_app/summarizer'
+import { Route as AppStrategyRouteImport } from './routes/_app/strategy'
+import { Route as AppSettingsRouteImport } from './routes/_app/settings'
+import { Route as AppResearchRouteImport } from './routes/_app/research'
+import { Route as AppPromptsRouteImport } from './routes/_app/prompts'
+import { Route as AppPlannerRouteImport } from './routes/_app/planner'
+import { Route as AppHistoryRouteImport } from './routes/_app/history'
+import { Route as AppEmailRouteImport } from './routes/_app/email'
+import { Route as AppDraftingRouteImport } from './routes/_app/drafting'
+import { Route as AppDashboardRouteImport } from './routes/_app/dashboard'
+import { Route as AppCourtPrepRouteImport } from './routes/_app/court-prep'
+import { Route as AppContractRouteImport } from './routes/_app/contract'
+import { Route as AppCitationsRouteImport } from './routes/_app/citations'
+import { Route as AppChatRouteImport } from './routes/_app/chat'
+import { Route as AppArgumentRouteImport } from './routes/_app/argument'
+import { Route as AppAnalyticsRouteImport } from './routes/_app/analytics'
 
+const PricingRoute = PricingRouteImport.update({
+  id: '/pricing',
+  path: '/pricing',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AuthRoute = AuthRouteImport.update({
+  id: '/auth',
+  path: '/auth',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AppRoute = AppRouteImport.update({
+  id: '/_app',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ApiChatRoute = ApiChatRouteImport.update({
+  id: '/api/chat',
+  path: '/api/chat',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AppWritingCoachRoute = AppWritingCoachRouteImport.update({
+  id: '/writing-coach',
+  path: '/writing-coach',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppTimelineRoute = AppTimelineRouteImport.update({
+  id: '/timeline',
+  path: '/timeline',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppSummarizerRoute = AppSummarizerRouteImport.update({
+  id: '/summarizer',
+  path: '/summarizer',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppStrategyRoute = AppStrategyRouteImport.update({
+  id: '/strategy',
+  path: '/strategy',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppSettingsRoute = AppSettingsRouteImport.update({
+  id: '/settings',
+  path: '/settings',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppResearchRoute = AppResearchRouteImport.update({
+  id: '/research',
+  path: '/research',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppPromptsRoute = AppPromptsRouteImport.update({
+  id: '/prompts',
+  path: '/prompts',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppPlannerRoute = AppPlannerRouteImport.update({
+  id: '/planner',
+  path: '/planner',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppHistoryRoute = AppHistoryRouteImport.update({
+  id: '/history',
+  path: '/history',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppEmailRoute = AppEmailRouteImport.update({
+  id: '/email',
+  path: '/email',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppDraftingRoute = AppDraftingRouteImport.update({
+  id: '/drafting',
+  path: '/drafting',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppDashboardRoute = AppDashboardRouteImport.update({
+  id: '/dashboard',
+  path: '/dashboard',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppCourtPrepRoute = AppCourtPrepRouteImport.update({
+  id: '/court-prep',
+  path: '/court-prep',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppContractRoute = AppContractRouteImport.update({
+  id: '/contract',
+  path: '/contract',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppCitationsRoute = AppCitationsRouteImport.update({
+  id: '/citations',
+  path: '/citations',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppChatRoute = AppChatRouteImport.update({
+  id: '/chat',
+  path: '/chat',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppArgumentRoute = AppArgumentRouteImport.update({
+  id: '/argument',
+  path: '/argument',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppAnalyticsRoute = AppAnalyticsRouteImport.update({
+  id: '/analytics',
+  path: '/analytics',
+  getParentRoute: () => AppRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/auth': typeof AuthRoute
+  '/pricing': typeof PricingRoute
+  '/analytics': typeof AppAnalyticsRoute
+  '/argument': typeof AppArgumentRoute
+  '/chat': typeof AppChatRoute
+  '/citations': typeof AppCitationsRoute
+  '/contract': typeof AppContractRoute
+  '/court-prep': typeof AppCourtPrepRoute
+  '/dashboard': typeof AppDashboardRoute
+  '/drafting': typeof AppDraftingRoute
+  '/email': typeof AppEmailRoute
+  '/history': typeof AppHistoryRoute
+  '/planner': typeof AppPlannerRoute
+  '/prompts': typeof AppPromptsRoute
+  '/research': typeof AppResearchRoute
+  '/settings': typeof AppSettingsRoute
+  '/strategy': typeof AppStrategyRoute
+  '/summarizer': typeof AppSummarizerRoute
+  '/timeline': typeof AppTimelineRoute
+  '/writing-coach': typeof AppWritingCoachRoute
+  '/api/chat': typeof ApiChatRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/auth': typeof AuthRoute
+  '/pricing': typeof PricingRoute
+  '/analytics': typeof AppAnalyticsRoute
+  '/argument': typeof AppArgumentRoute
+  '/chat': typeof AppChatRoute
+  '/citations': typeof AppCitationsRoute
+  '/contract': typeof AppContractRoute
+  '/court-prep': typeof AppCourtPrepRoute
+  '/dashboard': typeof AppDashboardRoute
+  '/drafting': typeof AppDraftingRoute
+  '/email': typeof AppEmailRoute
+  '/history': typeof AppHistoryRoute
+  '/planner': typeof AppPlannerRoute
+  '/prompts': typeof AppPromptsRoute
+  '/research': typeof AppResearchRoute
+  '/settings': typeof AppSettingsRoute
+  '/strategy': typeof AppStrategyRoute
+  '/summarizer': typeof AppSummarizerRoute
+  '/timeline': typeof AppTimelineRoute
+  '/writing-coach': typeof AppWritingCoachRoute
+  '/api/chat': typeof ApiChatRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/_app': typeof AppRouteWithChildren
+  '/auth': typeof AuthRoute
+  '/pricing': typeof PricingRoute
+  '/_app/analytics': typeof AppAnalyticsRoute
+  '/_app/argument': typeof AppArgumentRoute
+  '/_app/chat': typeof AppChatRoute
+  '/_app/citations': typeof AppCitationsRoute
+  '/_app/contract': typeof AppContractRoute
+  '/_app/court-prep': typeof AppCourtPrepRoute
+  '/_app/dashboard': typeof AppDashboardRoute
+  '/_app/drafting': typeof AppDraftingRoute
+  '/_app/email': typeof AppEmailRoute
+  '/_app/history': typeof AppHistoryRoute
+  '/_app/planner': typeof AppPlannerRoute
+  '/_app/prompts': typeof AppPromptsRoute
+  '/_app/research': typeof AppResearchRoute
+  '/_app/settings': typeof AppSettingsRoute
+  '/_app/strategy': typeof AppStrategyRoute
+  '/_app/summarizer': typeof AppSummarizerRoute
+  '/_app/timeline': typeof AppTimelineRoute
+  '/_app/writing-coach': typeof AppWritingCoachRoute
+  '/api/chat': typeof ApiChatRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/auth'
+    | '/pricing'
+    | '/analytics'
+    | '/argument'
+    | '/chat'
+    | '/citations'
+    | '/contract'
+    | '/court-prep'
+    | '/dashboard'
+    | '/drafting'
+    | '/email'
+    | '/history'
+    | '/planner'
+    | '/prompts'
+    | '/research'
+    | '/settings'
+    | '/strategy'
+    | '/summarizer'
+    | '/timeline'
+    | '/writing-coach'
+    | '/api/chat'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/auth'
+    | '/pricing'
+    | '/analytics'
+    | '/argument'
+    | '/chat'
+    | '/citations'
+    | '/contract'
+    | '/court-prep'
+    | '/dashboard'
+    | '/drafting'
+    | '/email'
+    | '/history'
+    | '/planner'
+    | '/prompts'
+    | '/research'
+    | '/settings'
+    | '/strategy'
+    | '/summarizer'
+    | '/timeline'
+    | '/writing-coach'
+    | '/api/chat'
+  id:
+    | '__root__'
+    | '/'
+    | '/_app'
+    | '/auth'
+    | '/pricing'
+    | '/_app/analytics'
+    | '/_app/argument'
+    | '/_app/chat'
+    | '/_app/citations'
+    | '/_app/contract'
+    | '/_app/court-prep'
+    | '/_app/dashboard'
+    | '/_app/drafting'
+    | '/_app/email'
+    | '/_app/history'
+    | '/_app/planner'
+    | '/_app/prompts'
+    | '/_app/research'
+    | '/_app/settings'
+    | '/_app/strategy'
+    | '/_app/summarizer'
+    | '/_app/timeline'
+    | '/_app/writing-coach'
+    | '/api/chat'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AppRoute: typeof AppRouteWithChildren
+  AuthRoute: typeof AuthRoute
+  PricingRoute: typeof PricingRoute
+  ApiChatRoute: typeof ApiChatRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/pricing': {
+      id: '/pricing'
+      path: '/pricing'
+      fullPath: '/pricing'
+      preLoaderRoute: typeof PricingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/auth': {
+      id: '/auth'
+      path: '/auth'
+      fullPath: '/auth'
+      preLoaderRoute: typeof AuthRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/_app': {
+      id: '/_app'
+      path: ''
+      fullPath: '/'
+      preLoaderRoute: typeof AppRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -48,22 +336,193 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/api/chat': {
+      id: '/api/chat'
+      path: '/api/chat'
+      fullPath: '/api/chat'
+      preLoaderRoute: typeof ApiChatRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/_app/writing-coach': {
+      id: '/_app/writing-coach'
+      path: '/writing-coach'
+      fullPath: '/writing-coach'
+      preLoaderRoute: typeof AppWritingCoachRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/_app/timeline': {
+      id: '/_app/timeline'
+      path: '/timeline'
+      fullPath: '/timeline'
+      preLoaderRoute: typeof AppTimelineRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/_app/summarizer': {
+      id: '/_app/summarizer'
+      path: '/summarizer'
+      fullPath: '/summarizer'
+      preLoaderRoute: typeof AppSummarizerRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/_app/strategy': {
+      id: '/_app/strategy'
+      path: '/strategy'
+      fullPath: '/strategy'
+      preLoaderRoute: typeof AppStrategyRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/_app/settings': {
+      id: '/_app/settings'
+      path: '/settings'
+      fullPath: '/settings'
+      preLoaderRoute: typeof AppSettingsRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/_app/research': {
+      id: '/_app/research'
+      path: '/research'
+      fullPath: '/research'
+      preLoaderRoute: typeof AppResearchRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/_app/prompts': {
+      id: '/_app/prompts'
+      path: '/prompts'
+      fullPath: '/prompts'
+      preLoaderRoute: typeof AppPromptsRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/_app/planner': {
+      id: '/_app/planner'
+      path: '/planner'
+      fullPath: '/planner'
+      preLoaderRoute: typeof AppPlannerRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/_app/history': {
+      id: '/_app/history'
+      path: '/history'
+      fullPath: '/history'
+      preLoaderRoute: typeof AppHistoryRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/_app/email': {
+      id: '/_app/email'
+      path: '/email'
+      fullPath: '/email'
+      preLoaderRoute: typeof AppEmailRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/_app/drafting': {
+      id: '/_app/drafting'
+      path: '/drafting'
+      fullPath: '/drafting'
+      preLoaderRoute: typeof AppDraftingRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/_app/dashboard': {
+      id: '/_app/dashboard'
+      path: '/dashboard'
+      fullPath: '/dashboard'
+      preLoaderRoute: typeof AppDashboardRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/_app/court-prep': {
+      id: '/_app/court-prep'
+      path: '/court-prep'
+      fullPath: '/court-prep'
+      preLoaderRoute: typeof AppCourtPrepRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/_app/contract': {
+      id: '/_app/contract'
+      path: '/contract'
+      fullPath: '/contract'
+      preLoaderRoute: typeof AppContractRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/_app/citations': {
+      id: '/_app/citations'
+      path: '/citations'
+      fullPath: '/citations'
+      preLoaderRoute: typeof AppCitationsRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/_app/chat': {
+      id: '/_app/chat'
+      path: '/chat'
+      fullPath: '/chat'
+      preLoaderRoute: typeof AppChatRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/_app/argument': {
+      id: '/_app/argument'
+      path: '/argument'
+      fullPath: '/argument'
+      preLoaderRoute: typeof AppArgumentRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/_app/analytics': {
+      id: '/_app/analytics'
+      path: '/analytics'
+      fullPath: '/analytics'
+      preLoaderRoute: typeof AppAnalyticsRouteImport
+      parentRoute: typeof AppRoute
+    }
   }
 }
 
+interface AppRouteChildren {
+  AppAnalyticsRoute: typeof AppAnalyticsRoute
+  AppArgumentRoute: typeof AppArgumentRoute
+  AppChatRoute: typeof AppChatRoute
+  AppCitationsRoute: typeof AppCitationsRoute
+  AppContractRoute: typeof AppContractRoute
+  AppCourtPrepRoute: typeof AppCourtPrepRoute
+  AppDashboardRoute: typeof AppDashboardRoute
+  AppDraftingRoute: typeof AppDraftingRoute
+  AppEmailRoute: typeof AppEmailRoute
+  AppHistoryRoute: typeof AppHistoryRoute
+  AppPlannerRoute: typeof AppPlannerRoute
+  AppPromptsRoute: typeof AppPromptsRoute
+  AppResearchRoute: typeof AppResearchRoute
+  AppSettingsRoute: typeof AppSettingsRoute
+  AppStrategyRoute: typeof AppStrategyRoute
+  AppSummarizerRoute: typeof AppSummarizerRoute
+  AppTimelineRoute: typeof AppTimelineRoute
+  AppWritingCoachRoute: typeof AppWritingCoachRoute
+}
+
+const AppRouteChildren: AppRouteChildren = {
+  AppAnalyticsRoute: AppAnalyticsRoute,
+  AppArgumentRoute: AppArgumentRoute,
+  AppChatRoute: AppChatRoute,
+  AppCitationsRoute: AppCitationsRoute,
+  AppContractRoute: AppContractRoute,
+  AppCourtPrepRoute: AppCourtPrepRoute,
+  AppDashboardRoute: AppDashboardRoute,
+  AppDraftingRoute: AppDraftingRoute,
+  AppEmailRoute: AppEmailRoute,
+  AppHistoryRoute: AppHistoryRoute,
+  AppPlannerRoute: AppPlannerRoute,
+  AppPromptsRoute: AppPromptsRoute,
+  AppResearchRoute: AppResearchRoute,
+  AppSettingsRoute: AppSettingsRoute,
+  AppStrategyRoute: AppStrategyRoute,
+  AppSummarizerRoute: AppSummarizerRoute,
+  AppTimelineRoute: AppTimelineRoute,
+  AppWritingCoachRoute: AppWritingCoachRoute,
+}
+
+const AppRouteWithChildren = AppRoute._addFileChildren(AppRouteChildren)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AppRoute: AppRouteWithChildren,
+  AuthRoute: AuthRoute,
+  PricingRoute: PricingRoute,
+  ApiChatRoute: ApiChatRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}
