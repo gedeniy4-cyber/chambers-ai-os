@@ -68,4 +68,5 @@ Or clone this repository and run npm install then npm run dev.
 No API key is required to explore the app in guest mode.
 
 Author
+
 Yondela Gedeni.
