@@ -54,7 +54,8 @@ Every AI feature accepts attachments through a Plus control next to the prompt b
 
 > Build a production ready, responsive SaaS application called Chambers OS, an AI powered platform for legal professionals. Every button, form, and page must work. Every AI feature must call one shared, reusable AI service, with prompts stored separately from the UI. Support unlimited attachments and unlimited prompt length, with the AI able to read and respond to uploaded documents. Include a subscription system in South African Rand that genuinely enables and disables features, a fully functional and unlimited guest mode, and a responsible AI disclaimer on every AI page.
 
-The full build prompt is in `lovable-prompt.md`.
+The full build prompt is in `https://lexis-aura-ai.lovable.app/`.
+Its advamced version is in`https://chambers-ai-os.lovable.app`.
 
 ## Challenges and Solutions
 
