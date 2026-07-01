@@ -1,4 +1,5 @@
 ChambersAI OS
+
 The AI Operating System for Modern Legal Professionals
 An AI powered productivity platform built for law students, candidate attorneys, paralegals, attorneys, advocates, and corporate legal teams. Built for the CAPACITI AI Skills Acceleration Programme, Week 3: AI Powered Workplace Productivity Assistant.
 Problem Statement
